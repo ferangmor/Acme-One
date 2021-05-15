@@ -80,7 +80,7 @@
 		<property name="moment" value="2021/03/02 09:00"/>
 		<property name="status" value="IMPORTANT"/>
 		<property name="text" value="You may now benefit from our great volume discount!"/>
-		<property name="info" value="http://www.acme-jobs.com/discount"/>
+		<property name="info" value="http://www.acme-one.com/discount"/>
 	</bean>
 		
 	<bean id="announcement05" class="acme.entities.announcements.Announcement">
@@ -321,10 +321,10 @@
 	</bean>
 	
 	<!-- Tasks -->
-	    <bean name="task01" class="acme.entities.tasks.Task">
+	<bean name="task01" class="acme.entities.tasks.Task">
         <property name="title" value="Play Dark Souls Remastered"/>
-        <property name="startTime" value="2021/05/30 11:20"/>
-        <property name="endTime" value="2021/05/30 15:20"/>
+        <property name="startTime" value="2021/06/30 11:20"/>
+        <property name="endTime" value="2021/06/30 15:20"/>
         <property name="workload" value="2.5"/>
         <property name="description" value="I love the reign of Lordran"/>
         <property name="info" value="https://web.archive.org/web/20110205223704/http://www.fromsoftware.jp/darksouls/"/>
@@ -334,8 +334,8 @@
     
     <bean name="task02" class="acme.entities.tasks.Task">
         <property name="title" value="Do the dishes"/>
-        <property name="startTime" value="2021/05/08 12:00"/>
-        <property name="endTime" value="2021/05/08 12:15"/>
+        <property name="startTime" value="2021/06/28 12:00"/>
+        <property name="endTime" value="2021/06/28 12:15"/>
         <property name="workload" value="0.25"/>
         <property name="description" value="I don't want..."/>
         <property name="info" value="https://www.bosch-home.es/"/>
@@ -345,8 +345,8 @@
     
     <bean name="task03" class="acme.entities.tasks.Task">
         <property name="title" value="Study biology"/>
-        <property name="startTime" value="2021/05/10 11:30"/>
-        <property name="endTime" value="2021/05/13 13:00"/>
+        <property name="startTime" value="2021/06/10 11:30"/>
+        <property name="endTime" value="2021/06/13 13:00"/>
         <property name="workload" value="1.15"/>
         <property name="description" value="I'm a mad scientist"/>
         <property name="info"><null/></property>
@@ -355,8 +355,8 @@
     </bean>
     <bean name="task04" class="acme.entities.tasks.Task">
         <property name="title" value="Do excercice"/>
-        <property name="startTime" value="2021/05/08 14:00"/>
-        <property name="endTime" value="2021/05/08 16:00"/>
+        <property name="startTime" value="2021/06/08 14:00"/>
+        <property name="endTime" value="2021/06/08 16:00"/>
         <property name="workload" value="1.8"/>
         <property name="description" value="Getting power!"/>
         <property name="info"><null/></property>
