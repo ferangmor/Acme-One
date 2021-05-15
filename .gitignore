@@ -8,6 +8,7 @@ target/
 .project
 .settings
 .springBeans
+acme-one.log
 
 ### IntelliJ IDEA ###
 .idea
