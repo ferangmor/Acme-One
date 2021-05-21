@@ -1,5 +1,8 @@
 package acme.features.authenticated.task;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +27,16 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
 
-		return true;
+		Task result;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneTaskById(id);
+
+		final SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss");
+		final Date now = new Date(System.currentTimeMillis());
+
+		return result.getIsPublic() || result.getEndTime().before(now);
 	}
 
 	@Override
