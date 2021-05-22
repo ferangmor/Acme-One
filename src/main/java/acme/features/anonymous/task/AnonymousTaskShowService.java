@@ -1,6 +1,5 @@
 package acme.features.anonymous.task;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +27,9 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		id = request.getModel().getInteger("id");
 		result = this.repository.findTaskById(id);
 		
-		final SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss");
 		final Date now = new Date(System.currentTimeMillis());
 
-		return result.getIsPublic() || result.getEndTime().after(now);
+		return result.getIsPublic() && result.getEndTime().after(now);
 	}
 	
 	@Override

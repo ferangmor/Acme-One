@@ -32,4 +32,14 @@ public class AnonymousTaskListAndShowTest extends AcmeOneTest{
 		super.checkInputBoxHasValue("info", info);
 
 	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/anonymous/task/list-and-show.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	public void listAndShowNegativeTest() {
+		super.driver.get("http://localhost:8080/Acme-One/anonymous/task/show?id=41");
+		
+		super.checkErrorsExist();
+
+	}
 }

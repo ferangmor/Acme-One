@@ -107,7 +107,7 @@ public abstract class AbstractTest {
 		super();
 		this.headless = false;
 		this.autoPausing = false;
-		this.defaultTimeout = 60;
+		this.defaultTimeout = 30;
 	}
 
 	// JUnit interface --------------------------------------------------------
