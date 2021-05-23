@@ -18,7 +18,7 @@ public class AuthenticatedTaskListAndShowTest extends AcmeOneTest{
 	@ParameterizedTest	
 	@CsvFileSource(resources = "/authenticated/task/list-and-show.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void listAndShowTest(final int recordIndex, final String title,final String startTime,final String endTime,final String workload,final String description,final String info,final String isPublic,final String manager){
+	public void listAndShowTest(final int recordIndex, final String title){
 		super.signIn("manager1", "manager1");
 		
 		super.clickOnMenu("Manager", "Create task");
