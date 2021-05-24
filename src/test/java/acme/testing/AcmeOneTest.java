@@ -4,16 +4,16 @@ import org.hibernate.internal.util.StringHelper;
 import org.junit.jupiter.api.BeforeAll;
 
 public class AcmeOneTest extends AcmeTest {
-	
+
 	// Internal state ---------------------------------------------
-	
+
 	// Lifecycle management ---------------------------------------
-	
+
 	@Override
 	@BeforeAll
 	public void beforeAll() {
 		super.beforeAll();
-		
+
 		super.setBaseCamp("http", "localhost", "8080", "/Acme-One", "/master/welcome", "?language=en&debug=true");
 		super.setAutoPausing(false);
 		
@@ -29,7 +29,7 @@ public class AcmeOneTest extends AcmeTest {
 	protected void signIn(final String username, final String password) {
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
-		
+
 		super.navigateHome();
 		super.clickOnMenu("Sign in", null);
 		super.fillInputBoxIn("username", username);
@@ -39,13 +39,12 @@ public class AcmeOneTest extends AcmeTest {
 		super.checkSimplePath("/master/welcome");
 		super.checkLinkExists("Account");
 	}
-	
+
 	protected void signOut() {
 		super.navigateHome();
 		super.clickOnMenu("Sign out", null);
 		super.checkSimplePath("/master/welcome");
 	}
-	
 	protected void signUp(final String username, final String password, final String name, final String surname, final String email, final String phone) {
 	    assert !StringHelper.isBlank(username);
 	    assert !StringHelper.isBlank(password);
@@ -53,7 +52,6 @@ public class AcmeOneTest extends AcmeTest {
 	    assert !StringHelper.isBlank(surname);
 	    assert !StringHelper.isBlank(email);
 	    //phone is nullable
-	    
 	    super.navigateHome();
 	    super.clickOnMenu("Sign up", null);
 	    super.fillInputBoxIn("username", username);
@@ -67,5 +65,4 @@ public class AcmeOneTest extends AcmeTest {
 		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/master/welcome");
 	}
-
-}
+} 

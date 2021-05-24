@@ -1,0 +1,7 @@
+recordIndex,author,text,info
+0,,Lorem ipsum!,http://example.org
+1,John Doe,,http://example.org
+2,John Doe,Lorem ipsum!,WrongUrl
+3,auth,text1,http://example.org
+4,auhtor,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,http://example.org
+5,aaaaaaaaaaaaaaaaaaaaaaaaaa,text1,http://example.org

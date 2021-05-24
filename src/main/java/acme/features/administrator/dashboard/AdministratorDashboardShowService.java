@@ -15,6 +15,7 @@ package acme.features.administrator.dashboard;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -138,8 +139,19 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		
 		deviationWorkload = Math.sqrt(stddev/wl.size());
-		minimumWorkload = wl.stream().min(Comparator.naturalOrder()).get();
-		maximumWorkload = wl.stream().max(Comparator.naturalOrder()).get();
+		final Optional<Double>  minimumWorkloadOp = wl.stream().min(Comparator.naturalOrder());
+		final Optional<Double> maximumWorkloadOp = wl.stream().max(Comparator.naturalOrder());
+		if(minimumWorkloadOp.isPresent()) {
+			minimumWorkload = minimumWorkloadOp.get();
+		}else {
+			minimumWorkload = 0.0;
+		}
+		
+		if(maximumWorkloadOp.isPresent()) {
+			maximumWorkload = maximumWorkloadOp.get();
+		}else {
+			maximumWorkload = 0.0;
+		}
 		
 		result.setAverageWorkload(averageWorkload);
 		result.setDeviationWorkload(deviationWorkload);
@@ -172,9 +184,21 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 
 		deviationExecutionPeriod = Math.sqrt(stddev / days.size());
-		minimumExecutionPeriod = days.stream().min(Comparator.naturalOrder()).get();
-		maximumExecutionPeriod = days.stream().max(Comparator.naturalOrder()).get();
+		final Optional<Double> minimumExecutionPeriodOp = days.stream().min(Comparator.naturalOrder());
+		final Optional<Double> maximumExecutionPeriodOp = days.stream().max(Comparator.naturalOrder());
 
+		if(minimumExecutionPeriodOp.isPresent()) {
+			minimumExecutionPeriod = minimumExecutionPeriodOp.get();
+		}else {
+			minimumExecutionPeriod = 0.0;
+		}
+		
+		if(maximumExecutionPeriodOp.isPresent()) {
+			maximumExecutionPeriod = maximumExecutionPeriodOp.get();
+		}else {
+			maximumExecutionPeriod = 0.0;
+		}
+		
 		result.setAverageExecutionPeriod(averageExecutionPeriod);
 		result.setDeviationExecutionPeriod(deviationExecutionPeriod);
 		result.setMinimumExecutionPeriod(minimumExecutionPeriod);
