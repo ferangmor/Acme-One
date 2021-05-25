@@ -12,6 +12,7 @@
 
 package acme.features.administrator.dashboard;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -43,6 +44,24 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 
 		return true;
+	}
+	
+	private double getAverage(final double original) {
+		
+		final BigDecimal bigDecimal2 = new BigDecimal(String.valueOf(original));
+		
+		final int intValue2 = bigDecimal2.intValue();
+		final double decimalPart2 = bigDecimal2.subtract(new BigDecimal(intValue2)).doubleValue();
+		
+		final int decimalInt = (int) (decimalPart2 * 100);
+		
+		final double decimalFinal = (decimalInt % 60.0) / 100.0;
+		
+		final int enteraSumaFinal = (int) (decimalInt - decimalFinal*100) / 60;
+		
+		final double enteraFinal = (double) intValue2 + (double) enteraSumaFinal;
+		
+		return enteraFinal + decimalFinal;
 	}
 
 	@Override
@@ -132,7 +151,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			n += d;
 		}
 		
-		averageWorkload = n/wl.size();
+		averageWorkload = this.getAverage(n/wl.size());
 		
 		for(final double d : wl) {
 			stddev += Math.pow(d - averageWorkload, 2);

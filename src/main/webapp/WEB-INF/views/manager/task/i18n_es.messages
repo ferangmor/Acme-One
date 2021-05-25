@@ -23,7 +23,8 @@ manager.task.form.button.create = Crear
 manager.task.form.button.return = Volver
 
 manager.task.form.error.isBefore = La fecha de finalizacion debe ser posterior a la fecha de inicio 
-manager.task.form.error.workload = La carga de trabajo no puede superar el periodo de ejecucion 
+manager.task.form.error.workload = La carga de trabajo no puede superar el periodo de ejecucion
+çmanager.task.form.error.workload.decimal = La parte decimal de la carga de trabajo debe ser menor a 60 minutos
 manager.task.form.error.spam = Se ha detectado spam en el texto introducido
 manager.task.form.error.datePattern = El patrón introducido es incorrecto
 
@@ -31,3 +32,7 @@ manager.task.list.label.title = Título
 manager.task.list.label.startTime = Momento de inicio
 manager.task.list.label.endTime = Momento de fin
 manager.task.list.label.workload = Carga de trabajo (en horas)
+
+manager.task.form.placeholder.title = Ir al mercadona
+manager.task.form.placeholder.description = Comprar papel de cocina y huevos
+manager.task.form.placeholder.workload = 0.00
