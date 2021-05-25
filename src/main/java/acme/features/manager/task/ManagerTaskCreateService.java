@@ -1,5 +1,6 @@
 package acme.features.manager.task;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,9 +60,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		manager = this.repository.findOneManagerById(request.getPrincipal().getActiveRoleId());
 		
 		result = new Task();
-		result.setTitle("Go to Mercadona");
-		result.setDescription("You have to buy guacamole, chicken, tortitas, shredded cheese, peppers and Mexican sauce to make the burritos for dinner with Millers family.");
-		result.setInfo("http://example.org");
 		
 		result.setManager(manager);
 		return result;
@@ -73,21 +71,19 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert errors != null;
 		
-		
 		if (!errors.hasErrors("endTime")) {
 			errors.state(request, entity.getEndTime().after(entity.getStartTime()), "endTime", "manager.task.form.error.isBefore");	
 		}
 		
-		if (!errors.hasErrors("workload")) {
-			final double executionPeriodInHours;
-			long executionPeriod;
+		if (!errors.hasErrors("workload") && !errors.hasErrors("endTime") && !errors.hasErrors("startTime") ) {
+			final Double workload = entity.getWorkload();
+			final BigDecimal bigDecimal = new BigDecimal(String.valueOf(workload));
 			
-			executionPeriod = entity.getEndTime().getTime()-entity.getStartTime().getTime();
+			final int intValue = bigDecimal.intValue();
+			final double decimalPart = bigDecimal.subtract(new BigDecimal(intValue)).doubleValue();
 			
-			executionPeriodInHours = executionPeriod / 3600000.0; //Un minuto son 60.000 milisegundos 
-			
-			errors.state(request, entity.getWorkload()<= executionPeriodInHours, "workload", "manager.task.form.error.workload");
-			
+			errors.state(request, decimalPart < 0.60, "workload", "manager.task.form.error.workload.decimal");
+			errors.state(request, entity.getWorkload() <= entity.getExecutionPeriodInHours(), "workload", "manager.task.form.error.workload");			
 		}
 				
 		final List<Configuration> listConfigurations = new ArrayList<>(this.repository.getConfiguration());
