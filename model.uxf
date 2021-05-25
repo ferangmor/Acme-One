@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>125</x>
-      <y>235</y>
+      <x>205</x>
+      <y>250</y>
       <w>170</w>
       <h>100</h>
     </coordinates>
@@ -26,8 +26,8 @@ Job
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>315</x>
-      <y>235</y>
+      <x>395</x>
+      <y>250</y>
       <w>105</w>
       <h>45</h>
     </coordinates>
@@ -41,8 +41,8 @@ Employer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>235</y>
+      <x>510</x>
+      <y>250</y>
       <w>110</w>
       <h>45</h>
     </coordinates>
@@ -56,8 +56,8 @@ Worker
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>175</x>
-      <y>395</y>
+      <x>255</x>
+      <y>410</y>
       <w>110</w>
       <h>75</h>
     </coordinates>
@@ -77,8 +77,8 @@ Application
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>275</y>
+      <x>360</x>
+      <y>290</y>
       <w>225</w>
       <h>170</h>
     </coordinates>
@@ -91,8 +91,8 @@ made by &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>215</x>
-      <y>330</y>
+      <x>295</x>
+      <y>345</y>
       <w>40</w>
       <h>75</h>
     </coordinates>
@@ -105,8 +105,8 @@ About ^</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>275</y>
+      <x>370</x>
+      <y>290</y>
       <w>105</w>
       <h>45</h>
     </coordinates>
@@ -119,8 +119,8 @@ Offered by &gt;</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>0</x>
-      <y>290</y>
+      <x>80</x>
+      <y>305</y>
       <w>100</w>
       <h>35</h>
     </coordinates>
@@ -133,8 +133,8 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>95</x>
-      <y>305</y>
+      <x>175</x>
+      <y>320</y>
       <w>40</w>
       <h>20</h>
     </coordinates>
@@ -145,8 +145,8 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>570</x>
-      <y>255</y>
+      <x>650</x>
+      <y>270</y>
       <w>105</w>
       <h>50</h>
     </coordinates>
@@ -162,8 +162,8 @@ ApplicationStatus
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>335</y>
+      <x>620</x>
+      <y>350</y>
       <w>175</w>
       <h>80</h>
     </coordinates>
@@ -172,7 +172,7 @@ Dashboard
 --
 + averageNumberOfJobsPerEmployer: double
 + averageNumberOfApplicationsPerWorker: double
-+ avegageNumberOfApplicationsPerEmployer: double
++ averageNumberOfApplicationsPerEmployer: double
 + ratioOfPendingApplications: double
 + ratioOfAcceptedApplications: double
 + ratioOfRejectedApplications: double
@@ -182,8 +182,8 @@ Dashboard
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>165</y>
+      <x>450</x>
+      <y>180</y>
       <w>120</w>
       <h>30</h>
     </coordinates>
@@ -196,8 +196,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>365</x>
-      <y>190</y>
+      <x>445</x>
+      <y>205</y>
       <w>70</w>
       <h>55</h>
     </coordinates>
@@ -207,8 +207,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>115</y>
+      <x>200</x>
+      <y>130</y>
       <w>110</w>
       <h>60</h>
     </coordinates>
@@ -227,8 +227,8 @@ bg=orange
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>120</x>
-      <y>70</y>
+      <x>200</x>
+      <y>85</y>
       <w>120</w>
       <h>30</h>
     </coordinates>
@@ -240,8 +240,8 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>95</y>
+      <x>250</x>
+      <y>110</y>
       <w>15</w>
       <h>30</h>
     </coordinates>
@@ -252,8 +252,8 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
-      <y>190</y>
+      <x>500</x>
+      <y>205</y>
       <w>75</w>
       <h>55</h>
     </coordinates>
@@ -263,8 +263,8 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>525</x>
-      <y>175</y>
+      <x>605</x>
+      <y>190</y>
       <w>50</w>
       <h>15</h>
     </coordinates>
@@ -277,8 +277,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>525</x>
-      <y>155</y>
+      <x>605</x>
+      <y>170</y>
       <w>50</w>
       <h>15</h>
     </coordinates>
@@ -291,8 +291,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>525</x>
-      <y>195</y>
+      <x>605</x>
+      <y>210</y>
       <w>50</w>
       <h>15</h>
     </coordinates>
@@ -305,8 +305,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>485</x>
-      <y>160</y>
+      <x>565</x>
+      <y>175</y>
       <w>50</w>
       <h>30</h>
     </coordinates>
@@ -316,8 +316,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>485</x>
-      <y>175</y>
+      <x>565</x>
+      <y>190</y>
       <w>50</w>
       <h>15</h>
     </coordinates>
@@ -327,8 +327,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>485</x>
-      <y>175</y>
+      <x>565</x>
+      <y>190</y>
       <w>50</w>
       <h>35</h>
     </coordinates>
@@ -338,8 +338,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5</x>
-      <y>115</y>
+      <x>85</x>
+      <y>130</y>
       <w>110</w>
       <h>40</h>
     </coordinates>
@@ -355,8 +355,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>435</y>
+      <x>630</x>
+      <y>450</y>
       <w>115</w>
       <h>55</h>
     </coordinates>
@@ -371,8 +371,8 @@ SimpleClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>95</y>
+      <x>340</x>
+      <y>110</y>
       <w>190</w>
       <h>60</h>
     </coordinates>
@@ -388,8 +388,8 @@ Shout
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>70</y>
+      <x>570</x>
+      <y>85</y>
       <w>230</w>
       <h>80</h>
     </coordinates>
@@ -408,8 +408,8 @@ Task
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>355</x>
-      <y>0</y>
+      <x>435</x>
+      <y>15</y>
       <w>50</w>
       <h>55</h>
     </coordinates>
@@ -422,8 +422,8 @@ Manager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>375</x>
-      <y>50</y>
+      <x>455</x>
+      <y>65</y>
       <w>110</w>
       <h>125</h>
     </coordinates>
@@ -433,8 +433,8 @@ Manager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>15</y>
+      <x>480</x>
+      <y>30</y>
       <w>215</w>
       <h>65</h>
     </coordinates>

@@ -52,7 +52,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		request.unbind(entity, model, //
 			"averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerWorker", // 
-			"avegageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
+			"averageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
 			"ratioOfRejectedApplications", "ratioOfAcceptedApplications", //
 			"numberOfTasksPublic", "numberOfTasksPrivate", "numberOfTasksFinished", //
 			"numberOfTasksUnfinished", "averageWorkload", "deviationWorkload", //
@@ -87,7 +87,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		ratioOfRejectedApplications = this.repository.ratioOfRejectedApplications();
 		
 		result = new Dashboard();
-		result.setAvegageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
+		result.setAverageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
 		result.setAverageNumberOfApplicationsPerWorker(averageNumberOfApplicationsPerWorker);
 		result.setAverageNumberOfJobsPerEmployer(averageNumberOfJobsPerEmployer);
 		result.setRatioOfPendingApplications(ratioOfPendingApplications);

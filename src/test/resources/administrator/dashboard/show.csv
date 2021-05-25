@@ -1,2 +1,2 @@
-column
-row
+averageNumberOfJobsPerEmployer,averageNumberOfApplicationsPerWorker,averageNumberOfApplicationsPerEmployer,numberOfTasksPublic,numberOfTasksPrivate,numberOfTasksFinished,numberOfTasksUnfinished,averageWorkload,deviationWorkload,maximumWorkload,minimumWorkload,averageExecutionPeriod,maximumExecutionPeriod,minimumExecutionPeriod
+2.00,1.00,0.50,2,2,0,4,1.43,0.83,2.50,0.25,0.83,1.53,3.06,0.01
