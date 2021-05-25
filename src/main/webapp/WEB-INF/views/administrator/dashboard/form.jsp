@@ -42,7 +42,7 @@
 		<th scope="row"><acme:message
 				code="administrator.dashboard.form.label.average-number-applications-employer" />
 		</th>
-		<td><acme:print value="${avegageNumberOfApplicationsPerEmployer}" />
+		<td><acme:print value="${averageNumberOfApplicationsPerEmployer}" />
 		</td>
 	</tr>
 	<tr>

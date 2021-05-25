@@ -16,11 +16,11 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="manager.task.form.label.title" path="title"/>
+	<acme:form-textbox code="manager.task.form.label.title" path="title" placeholder="Lorem ipsum"/>
 	<acme:form-moment code="manager.task.form.label.startTime" path="startTime"/>
 	<acme:form-moment code="manager.task.form.label.endTime" path="endTime"/>
-	<acme:form-textbox code="manager.task.form.label.workload" path="workload"/>
-	<acme:form-textarea code="manager.task.form.label.description" path="description"/>
+	<acme:form-textbox code="manager.task.form.label.workload" path="workload" placeholder="0.0"/>
+	<acme:form-textarea code="manager.task.form.label.description" path="description" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/>
 	<acme:form-url code="manager.task.form.label.info" path="info"/>
 	<acme:form-checkbox code="manager.task.form.label.isPublic" path="isPublic"/>
 	

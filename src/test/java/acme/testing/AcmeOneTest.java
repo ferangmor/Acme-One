@@ -16,16 +16,16 @@ public class AcmeOneTest extends AcmeTest {
 
 		super.setBaseCamp("http", "localhost", "8080", "/Acme-One", "/master/welcome", "?language=en&debug=true");
 		super.setAutoPausing(false);
-
+		
 		this.navigateHome();
 		this.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "Populate DB (samples)");
 		super.checkAlertExists(true);
 		this.signOut();
 	}
-
+	
 	// Business methods -------------------------------------------
-
+	
 	protected void signIn(final String username, final String password) {
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
@@ -45,7 +45,6 @@ public class AcmeOneTest extends AcmeTest {
 		super.clickOnMenu("Sign out", null);
 		super.checkSimplePath("/master/welcome");
 	}
-
 	protected void signUp(final String username, final String password, final String name, final String surname, final String email, final String phone) {
 	    assert !StringHelper.isBlank(username);
 	    assert !StringHelper.isBlank(password);
@@ -53,7 +52,6 @@ public class AcmeOneTest extends AcmeTest {
 	    assert !StringHelper.isBlank(surname);
 	    assert !StringHelper.isBlank(email);
 	    //phone is nullable
-
 	    super.navigateHome();
 	    super.clickOnMenu("Sign up", null);
 	    super.fillInputBoxIn("username", username);
@@ -67,5 +65,4 @@ public class AcmeOneTest extends AcmeTest {
 		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/master/welcome");
 	}
-
-}
+} 

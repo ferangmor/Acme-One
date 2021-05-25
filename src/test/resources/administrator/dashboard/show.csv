@@ -1,0 +1,2 @@
+averageNumberOfJobsPerEmployer,averageNumberOfApplicationsPerWorker,averageNumberOfApplicationsPerEmployer,numberOfTasksPublic,numberOfTasksPrivate,numberOfTasksFinished,numberOfTasksUnfinished,averageWorkload,deviationWorkload,maximumWorkload,minimumWorkload,averageExecutionPeriod,maximumExecutionPeriod,minimumExecutionPeriod
+2.00,1.00,0.50,2,2,0,4,1.37,0.81,2.50,0.25,0.83,1.52,3.06,0.01

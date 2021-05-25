@@ -337,7 +337,7 @@
         <property name="startTime" value="2021/06/28 12:00"/>
         <property name="endTime" value="2021/06/28 12:15"/>
         <property name="workload" value="0.25"/>
-        <property name="description" value="I don't want..."/>
+        <property name="description" value="I don't want to..."/>
         <property name="info" value="https://www.bosch-home.es/"/>
         <property name="isPublic" value="false"/>
         <property name="manager" ref="manager1Manager"/>
@@ -357,7 +357,7 @@
         <property name="title" value="Do excercice"/>
         <property name="startTime" value="2021/06/08 14:00"/>
         <property name="endTime" value="2021/06/08 16:00"/>
-        <property name="workload" value="1.8"/>
+        <property name="workload" value="1.59"/>
         <property name="description" value="Getting power!"/>
         <property name="info"><null/></property>
         <property name="isPublic" value="false"/>

@@ -12,9 +12,11 @@
 
 package acme.features.administrator.dashboard;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +45,24 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		return true;
 	}
+	
+	private double getAverage(final double original) {
+		
+		final BigDecimal bigDecimal2 = new BigDecimal(String.valueOf(original));
+		
+		final int intValue2 = bigDecimal2.intValue();
+		final double decimalPart2 = bigDecimal2.subtract(new BigDecimal(intValue2)).doubleValue();
+		
+		final int decimalInt = (int) (decimalPart2 * 100);
+		
+		final double decimalFinal = (decimalInt % 60.0) / 100.0;
+		
+		final int enteraSumaFinal = (int) (decimalInt - decimalFinal*100) / 60;
+		
+		final double enteraFinal = (double) intValue2 + (double) enteraSumaFinal;
+		
+		return enteraFinal + decimalFinal;
+	}
 
 	@Override
 	public void unbind(final Request<Dashboard> request, final Dashboard entity, final Model model) {
@@ -52,7 +72,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		request.unbind(entity, model, //
 			"averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerWorker", // 
-			"avegageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
+			"averageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
 			"ratioOfRejectedApplications", "ratioOfAcceptedApplications", //
 			"numberOfTasksPublic", "numberOfTasksPrivate", "numberOfTasksFinished", //
 			"numberOfTasksUnfinished", "averageWorkload", "deviationWorkload", //
@@ -87,7 +107,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		ratioOfRejectedApplications = this.repository.ratioOfRejectedApplications();
 		
 		result = new Dashboard();
-		result.setAvegageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
+		result.setAverageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
 		result.setAverageNumberOfApplicationsPerWorker(averageNumberOfApplicationsPerWorker);
 		result.setAverageNumberOfJobsPerEmployer(averageNumberOfJobsPerEmployer);
 		result.setRatioOfPendingApplications(ratioOfPendingApplications);
@@ -131,15 +151,26 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			n += d;
 		}
 		
-		averageWorkload = n/wl.size();
+		averageWorkload = this.getAverage(n/wl.size());
 		
 		for(final double d : wl) {
 			stddev += Math.pow(d - averageWorkload, 2);
 		}
 		
 		deviationWorkload = Math.sqrt(stddev/wl.size());
-		minimumWorkload = wl.stream().min(Comparator.naturalOrder()).get();
-		maximumWorkload = wl.stream().max(Comparator.naturalOrder()).get();
+		final Optional<Double>  minimumWorkloadOp = wl.stream().min(Comparator.naturalOrder());
+		final Optional<Double> maximumWorkloadOp = wl.stream().max(Comparator.naturalOrder());
+		if(minimumWorkloadOp.isPresent()) {
+			minimumWorkload = minimumWorkloadOp.get();
+		}else {
+			minimumWorkload = 0.0;
+		}
+		
+		if(maximumWorkloadOp.isPresent()) {
+			maximumWorkload = maximumWorkloadOp.get();
+		}else {
+			maximumWorkload = 0.0;
+		}
 		
 		result.setAverageWorkload(averageWorkload);
 		result.setDeviationWorkload(deviationWorkload);
@@ -172,9 +203,21 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 
 		deviationExecutionPeriod = Math.sqrt(stddev / days.size());
-		minimumExecutionPeriod = days.stream().min(Comparator.naturalOrder()).get();
-		maximumExecutionPeriod = days.stream().max(Comparator.naturalOrder()).get();
+		final Optional<Double> minimumExecutionPeriodOp = days.stream().min(Comparator.naturalOrder());
+		final Optional<Double> maximumExecutionPeriodOp = days.stream().max(Comparator.naturalOrder());
 
+		if(minimumExecutionPeriodOp.isPresent()) {
+			minimumExecutionPeriod = minimumExecutionPeriodOp.get();
+		}else {
+			minimumExecutionPeriod = 0.0;
+		}
+		
+		if(maximumExecutionPeriodOp.isPresent()) {
+			maximumExecutionPeriod = maximumExecutionPeriodOp.get();
+		}else {
+			maximumExecutionPeriod = 0.0;
+		}
+		
 		result.setAverageExecutionPeriod(averageExecutionPeriod);
 		result.setDeviationExecutionPeriod(deviationExecutionPeriod);
 		result.setMinimumExecutionPeriod(minimumExecutionPeriod);
