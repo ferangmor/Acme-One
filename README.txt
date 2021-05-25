@@ -13,10 +13,6 @@ who have enroled the Design and Testing subject of the Software Engineering curr
 University of Sevilla.  This project is intended to illustrate how to develop a simple web
 information system.
 
-url del proyecto: https://github.com/Alebarmor/Acme-One
-url de la release: https://github.com/Alebarmor/Acme-One/tree/1.0.0
-
-Credenciales github para loguearse en clevercloud:
-user: Alebarmor
-password: AbmAbmAbm99
+url del proyecto: https://github.com/ferangmor/Acme-One
+url de la release: http://app-e23a2d4e-b434-4506-aa80-0501b58bf1ac.cleverapps.io/Acme-Jobs/master/welcome
 
