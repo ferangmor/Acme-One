@@ -95,11 +95,4 @@ public class Task extends DomainEntity {
 	@ManyToOne(optional = false)
 	protected Manager manager;
 	
-	// Validations
-	
-//	@Transient
-//	public Boolean isInFormat(final String date){
-//		return date.matches("^\\d{4}/\\d{2}/\\d{2} \\d{2}/\\\\d{2}");
-//	}
-	
 }
