@@ -10,7 +10,6 @@
 
 - Rafael Corchuelo (corchu@us.es)
 
-- Fernando Angulo Moruno (ferangmor@alum.us.es)
 - Alejandro Barba Moreno (alebarmor@alum.us.es)
 - Carolina Carrasco Díaz (carcardia2@alum.us.es)
 - Horacio Garcia Lergo (horgarler@alum.us.es)
