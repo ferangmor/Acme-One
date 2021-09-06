@@ -71,18 +71,23 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert errors != null;
 		
-		if (!errors.hasErrors("endTime")) {
+		if (!errors.hasErrors("startTime")) {
+			errors.state(request, entity.getStartTime() != null, "startTime", "manager.task.form.error.startTimeNull");	
+		}
+		
+		if (!errors.hasErrors("endTime") && entity.getStartTime() != null) {
 			errors.state(request, entity.getEndTime().after(entity.getStartTime()), "endTime", "manager.task.form.error.isBefore");	
 		}
 		
-		if (!errors.hasErrors("workload") && !errors.hasErrors("endTime") && !errors.hasErrors("startTime") ) {
+		if (!errors.hasErrors("workload") && !errors.hasErrors("endTime") && !errors.hasErrors("startTime") && entity.getStartTime() != null) {
 			final Double workload = entity.getWorkload();
 			final BigDecimal bigDecimal = new BigDecimal(String.valueOf(workload));
-			
+
 			final int intValue = bigDecimal.intValue();
 			final double decimalPart = bigDecimal.subtract(new BigDecimal(intValue)).doubleValue();
-			
+			final double unityPart = intValue - decimalPart;
 			errors.state(request, decimalPart < 0.60, "workload", "manager.task.form.error.workload.decimal");
+			errors.state(request, unityPart < 100.0, "workload", "manager.task.form.error.workload.unity");
 			errors.state(request, entity.getWorkload() <= entity.getExecutionPeriodInHours(), "workload", "manager.task.form.error.workload");			
 		}
 				

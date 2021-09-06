@@ -75,31 +75,31 @@ public class Task extends DomainEntity {
 	public double getExecutionPeriodInHours() {
 		final double executionPeriodInHours;
 		long executionPeriod;
+		double res = 0.0;
 		
-		executionPeriod = this.endTime.getTime() - this.startTime.getTime();
+		if(this.startTime != null) {
+			
+			executionPeriod = this.endTime.getTime() - this.startTime.getTime();
+			
+			executionPeriodInHours = executionPeriod / 3600000.0; //Un minuto son 60.000 milisegundos
+			
+			final BigDecimal bigDecimal2 = new BigDecimal(String.valueOf(executionPeriodInHours));
+			
+			final int intValue2 = bigDecimal2.intValue();
+			final double decimalPart2 = bigDecimal2.subtract(new BigDecimal(intValue2)).doubleValue();
+			
+			final double decimalFinal = (decimalPart2 * 60) / 100.0;
+			
+			res = intValue2 + decimalFinal;
+			
+		}
 		
-		executionPeriodInHours = executionPeriod / 3600000.0; //Un minuto son 60.000 milisegundos
-		
-		final BigDecimal bigDecimal2 = new BigDecimal(String.valueOf(executionPeriodInHours));
-		
-		final int intValue2 = bigDecimal2.intValue();
-		final double decimalPart2 = bigDecimal2.subtract(new BigDecimal(intValue2)).doubleValue();
-		
-		final double decimalFinal = (decimalPart2 * 60) / 100.0;
-		
-		return intValue2 + decimalFinal;
+		return res;
 	}
 	
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	protected Manager manager;
-	
-	// Validations
-	
-//	@Transient
-//	public Boolean isInFormat(final String date){
-//		return date.matches("^\\d{4}/\\d{2}/\\d{2} \\d{2}/\\\\d{2}");
-//	}
 	
 }

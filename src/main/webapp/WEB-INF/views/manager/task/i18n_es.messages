@@ -24,7 +24,8 @@ manager.task.form.button.return = Volver
 
 manager.task.form.error.isBefore = La fecha de finalizacion debe ser posterior a la fecha de inicio 
 manager.task.form.error.workload = La carga de trabajo no puede superar el periodo de ejecucion
-çmanager.task.form.error.workload.decimal = La parte decimal de la carga de trabajo debe ser menor a 60 minutos
+manager.task.form.error.workload.decimal = La parte decimal debe ser menor a 60 minutos.
+manager.task.form.error.workload.unity = La parte entera debe ser menor a 100 horas. 
 manager.task.form.error.spam = Se ha detectado spam en el texto introducido
 manager.task.form.error.datePattern = El patrón introducido es incorrecto
 

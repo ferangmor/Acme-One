@@ -24,6 +24,7 @@ manager.task.form.button.return = Return
 manager.task.form.error.isBefore = The end time must be after the start time
 manager.task.form.error.workload = The workload cannot exceed the execution period
 manager.task.form.error.workload.decimal = The decimal part of the workload must be less than 60 minutes
+manager.task.form.error.workload.unity = The integer part of the workload must be less than 100 hours
 manager.task.form.error.spam = Spam has been detected on text above
 manager.task.form.error.datePattern = Wrong date pattern
 
