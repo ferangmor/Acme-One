@@ -17,9 +17,9 @@ public class AdministratorDashboardShowTest extends AcmeOneTest{
 	@CsvFileSource(resources = "/administrator/dashboard/show.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void show(final String averageNumberOfJobsPerEmployer,final String averageNumberOfApplicationsPerWorker,//
-		final String averageNumberOfApplicationsPerEmployer, final String numberOfTasksPublic,//
-		final String numberOfTasksPrivate, final String numberOfTasksFinished,//
-		final String numberOfTasksUnfinished, final String averageWorkload, final String deviationWorkload,//
+		final String averageNumberOfApplicationsPerEmployer, final String numberOfDutiesPublic,//
+		final String numberOfDutiesPrivate, final String numberOfDutiesFinished,//
+		final String numberOfDutiesUnfinished, final String averageWorkload, final String deviationWorkload,//
 		final String maximumWorkload,final String minimumWorkload, final String averageExecutionPeriod,//
 		final String deviationExecutionPeriod, final String maximumExecutionPeriod, final String minimumExecutionPeriod) {
 		
@@ -28,10 +28,10 @@ public class AdministratorDashboardShowTest extends AcmeOneTest{
 		csvList.add(averageNumberOfJobsPerEmployer);
 		csvList.add(averageNumberOfApplicationsPerWorker);
 		csvList.add(averageNumberOfApplicationsPerEmployer);
-		csvList.add(numberOfTasksPublic);
-		csvList.add(numberOfTasksPrivate);
-		csvList.add(numberOfTasksFinished);
-		csvList.add(numberOfTasksUnfinished);
+		csvList.add(numberOfDutiesPublic);
+		csvList.add(numberOfDutiesPrivate);
+		csvList.add(numberOfDutiesFinished);
+		csvList.add(numberOfDutiesUnfinished);
 		csvList.add(averageWorkload);
 		csvList.add(deviationWorkload);
 		csvList.add(maximumWorkload);

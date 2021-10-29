@@ -35,10 +35,10 @@ public class Dashboard implements Serializable {
 	Double						ratioOfAcceptedApplications;
 	Double						ratioOfRejectedApplications;
 	
-	Integer						numberOfTasksPublic;
-	Integer						numberOfTasksPrivate;
-	Integer						numberOfTasksFinished;
-	Integer						numberOfTasksUnfinished;
+	Integer						numberOfDutiesPublic;
+	Integer						numberOfDutiesPrivate;
+	Integer						numberOfDutiesFinished;
+	Integer						numberOfDutiesUnfinished;
 	
 	Double						averageWorkload;
 	Double						deviationWorkload;

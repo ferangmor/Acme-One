@@ -21,7 +21,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.tasks.Task;
+import acme.entities.duties.Duty;
 import acme.forms.Dashboard;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -74,8 +74,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerWorker", // 
 			"averageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
 			"ratioOfRejectedApplications", "ratioOfAcceptedApplications", //
-			"numberOfTasksPublic", "numberOfTasksPrivate", "numberOfTasksFinished", //
-			"numberOfTasksUnfinished", "averageWorkload", "deviationWorkload", //
+			"numberOfDutiesPublic", "numberOfDutiesPrivate", "numberOfDutiesFinished", //
+			"numberOfDutiesUnfinished", "averageWorkload", "deviationWorkload", //
 			"maximumWorkload", "minimumWorkload", "averageExecutionPeriod", //
 			"deviationExecutionPeriod", "maximumExecutionPeriod", "minimumExecutionPeriod", //
 			"numberOfWorkPlans",
@@ -114,24 +114,24 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setRatioOfAcceptedApplications(ratioOfAcceptedApplications);
 		result.setRatioOfRejectedApplications(ratioOfRejectedApplications);
 		
-		// ------------------- Task -----------------------
+		// ------------------- Duty -----------------------
 		
-		final Integer numberOfTasksPublic;
-		final Integer numberOfTasksPrivate;
-		final Integer numberOfTasksFinished;
-		final Integer numberOfTasksUnfinished;
+		final Integer numberOfDutiesPublic;
+		final Integer numberOfDutiesPrivate;
+		final Integer numberOfDutiesFinished;
+		final Integer numberOfDutiesUnfinished;
 		
-		numberOfTasksPublic = this.repository.numberOfTasksPublic();
-		numberOfTasksPrivate = this.repository.numberOfTasksPrivate();
-		numberOfTasksFinished = this.repository.numberOfTasksFinished();
-		numberOfTasksUnfinished = this.repository.numberOfTasksUnfinished();
+		numberOfDutiesPublic = this.repository.numberOfDutiesPublic();
+		numberOfDutiesPrivate = this.repository.numberOfDutiesPrivate();
+		numberOfDutiesFinished = this.repository.numberOfDutiesFinished();
+		numberOfDutiesUnfinished = this.repository.numberOfDutiesUnfinished();
 		
-		result.setNumberOfTasksPublic(numberOfTasksPublic);
-		result.setNumberOfTasksPrivate(numberOfTasksPrivate);
-		result.setNumberOfTasksFinished(numberOfTasksFinished);
-		result.setNumberOfTasksUnfinished(numberOfTasksUnfinished);
+		result.setNumberOfDutiesPublic(numberOfDutiesPublic);
+		result.setNumberOfDutiesPrivate(numberOfDutiesPrivate);
+		result.setNumberOfDutiesFinished(numberOfDutiesFinished);
+		result.setNumberOfDutiesUnfinished(numberOfDutiesUnfinished);
 		
-		// ------------------- Task Stats -----------------------
+		// ------------------- Duty Stats -----------------------
 		
 		final Double averageWorkload;
 		final Double deviationWorkload;
@@ -140,7 +140,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		final List<Double> wl = new ArrayList<Double>();;
 		
-		for(final Task t : this.repository.findMany()) {
+		for(final Duty t : this.repository.findMany()) {
 			wl.add(t.getWorkload());
 		}
 		
@@ -186,7 +186,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		final List<Double> days = new ArrayList<Double>();
 
-		for (final Task t : this.repository.findMany()) {
+		for (final Duty t : this.repository.findMany()) {
 			days.add(t.getDays());
 		}
 
