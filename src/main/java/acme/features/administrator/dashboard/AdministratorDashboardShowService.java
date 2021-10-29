@@ -78,13 +78,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"numberOfDutiesUnfinished", "averageWorkload", "deviationWorkload", //
 			"maximumWorkload", "minimumWorkload", "averageExecutionPeriod", //
 			"deviationExecutionPeriod", "maximumExecutionPeriod", "minimumExecutionPeriod", //
-			"numberOfWorkPlans",
-			"numberOfWorkPlansPublic", "numberOfWorkPlansPrivate", "numberOfWorkPlansFinished", 
-			"numberOfWorkPlansUnfinished", //
-			"averageWorkPlansExecutionPeriod", "deviationWorkPlansExecutionPeriod",
-			"maximumWorkPlansExecutionPeriod","minimumWorkPlansExecutionPeriod", //
-			"averageWorkPlansWorkload",  "deviationWorkPlansWorkload",
-			"maximumWorkPlansWorkload", "minimumWorkPlansWorkload");
+			"numberOfEndeavours",
+			"numberOfEndeavoursPublic", "numberOfEndeavoursPrivate", "numberOfEndeavoursFinished", 
+			"numberOfEndeavoursUnfinished", //
+			"averageEndeavoursExecutionPeriod", "deviationEndeavoursExecutionPeriod",
+			"maximumEndeavoursExecutionPeriod","minimumEndeavoursExecutionPeriod", //
+			"averageEndeavoursWorkload",  "deviationEndeavoursWorkload",
+			"maximumEndeavoursWorkload", "minimumEndeavoursWorkload");
 	}
 
 	@Override
